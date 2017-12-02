@@ -5,4 +5,6 @@ package com.example.kynansong.shopping_basket;
  */
 
 public class ShoppingBasket {
+
+    //buy one get one free adds two items to the basket
 }
