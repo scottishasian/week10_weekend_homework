@@ -46,8 +46,12 @@ public class ShoppingBasket {
     }
 
     public double dealTotal() {  //assumes that every item is buy one get one free, thus the total is always half.
-        double result = totalShoppingAmount();
-        return result / 2;
+        double result = totalShoppingAmount() / 2;
+        if(result > 20.00){
+            return result * 0.9;
+        } else {
+            return result;
+        }
 
     }
 }

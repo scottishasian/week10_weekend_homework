@@ -12,13 +12,14 @@ import static junit.framework.Assert.assertEquals;
 public class ShoppingBasketTest {
 
     ShoppingBasket shoppingBasket;
-    ShopItem cheese, rum;
+    ShopItem cheese, rum, apple;
 
     @Before
     public void before() {
         this.shoppingBasket = new ShoppingBasket();
         this.cheese = new ShopItem("Cheese", 4.51);
         this.rum = new ShopItem("Rum", 24.67);
+        this.apple = new ShopItem("Apple", 1.67);
 
     }
 
@@ -55,10 +56,10 @@ public class ShoppingBasketTest {
     @Test
     public void totalShoppingAmountTest() {
         shoppingBasket.addItem(cheese);
-        shoppingBasket.addItem(rum);
+        shoppingBasket.addItem(apple);
         assertEquals(2, shoppingBasket.itemCount());
         double result = shoppingBasket.totalShoppingAmount();
-        assertEquals(29.18, result, 0.01);
+        assertEquals(6.18, result, 0.01);
 
     }
 
@@ -73,6 +74,16 @@ public class ShoppingBasketTest {
     public void totalBuyOneGetOneFreeTest() {
         shoppingBasket.buyOneGetOneFree(cheese);
         assertEquals(2, shoppingBasket.itemCount());
-        assertEquals(4.51, shoppingBasket.dealTotal());
+        assertEquals(4.51, shoppingBasket.dealTotal(), 0.01);
+    }
+
+    @Test
+    public void canGiveTenPercentDiscountTest() {
+        shoppingBasket.buyOneGetOneFree(cheese);
+        shoppingBasket.buyOneGetOneFree(rum);
+        assertEquals(4, shoppingBasket.itemCount());
+        assertEquals(26.26, shoppingBasket.dealTotal(), 0.01);
+
+
     }
 }
