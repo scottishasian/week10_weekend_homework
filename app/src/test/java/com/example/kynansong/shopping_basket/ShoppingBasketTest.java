@@ -34,11 +34,21 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void RemoveItemFromBasket() {
+    public void RemoveItemFromBasketTest() {
         shoppingBasket.addItem(cheese);
         shoppingBasket.addItem(rum);
         assertEquals(2, shoppingBasket.itemCount());
         shoppingBasket.removeItem(rum);
         assertEquals(1, shoppingBasket.itemCount());
+    }
+
+    @Test
+    public void RemoveAllItemsFromBasketTest() {
+        shoppingBasket.addItem(cheese);
+        shoppingBasket.addItem(rum);
+        assertEquals(2, shoppingBasket.itemCount());
+        shoppingBasket.emptyBasket();
+        assertEquals(0, shoppingBasket.itemCount());
+
     }
 }

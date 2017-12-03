@@ -10,21 +10,25 @@ public class ShoppingBasket {
 
     //buy one get one free adds two items to the basket
 
-    ArrayList<ShopItem> Basket;
+    ArrayList<ShopItem> basket;
 
     public ShoppingBasket() {
-        this.Basket = new ArrayList();
+        this.basket = new ArrayList();
     }
 
     public int itemCount() {
-        return Basket.size();
+        return basket.size();
     }
 
     public void addItem(ShopItem item) {
-        Basket.add(item);
+        basket.add(item);
     }
 
     public void removeItem(ShopItem item) {
-        this.Basket.remove(item);
+        this.basket.remove(item);
+    }
+
+    public void emptyBasket() {
+        this.basket.clear();
     }
 }
