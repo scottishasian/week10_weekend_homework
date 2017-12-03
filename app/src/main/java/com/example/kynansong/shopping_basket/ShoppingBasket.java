@@ -31,4 +31,12 @@ public class ShoppingBasket {
     public void emptyBasket() {
         this.basket.clear();
     }
+
+    public double totalShoppingAmount() {
+        double totalSpend = 0;
+        for (ShopItem item : basket) {
+            totalSpend += item.getPrice();
+        }
+        return totalSpend;
+    }
 }

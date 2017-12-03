@@ -51,4 +51,14 @@ public class ShoppingBasketTest {
         assertEquals(0, shoppingBasket.itemCount());
 
     }
+
+    @Test
+    public void totalShoppingAmountTest() {
+        shoppingBasket.addItem(cheese);
+        shoppingBasket.addItem(rum);
+        assertEquals(2, shoppingBasket.itemCount());
+        double result = shoppingBasket.totalShoppingAmount();
+        assertEquals(29.18, result, 0.01);
+
+    }
 }
