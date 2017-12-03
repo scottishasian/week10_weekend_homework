@@ -61,4 +61,11 @@ public class ShoppingBasketTest {
         assertEquals(29.18, result, 0.01);
 
     }
+
+    @Test
+    public void buyOneGetOneFreeTest () {
+        shoppingBasket.buyOneGetOneFree(cheese);
+        assertEquals(2, shoppingBasket.itemCount());
+
+    }
 }

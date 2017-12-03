@@ -39,4 +39,9 @@ public class ShoppingBasket {
         }
         return totalSpend;
     }
+
+    public void buyOneGetOneFree(ShopItem item) {  //not dry but works.
+        basket.add(item);
+        basket.add(item);
+    }
 }
