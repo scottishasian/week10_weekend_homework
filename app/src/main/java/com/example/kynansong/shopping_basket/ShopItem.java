@@ -11,7 +11,8 @@ public class ShopItem {
 
 
     //will have a name and a price
-    //maybe connect to a discounts interface
+    //ideally should have an interface of buy-able then each item is a class itself as there are
+    //many types of each item. Cheese implements Buyable.
 
     public ShopItem(String itemName, double itemCost) {
         this.itemName = itemName;

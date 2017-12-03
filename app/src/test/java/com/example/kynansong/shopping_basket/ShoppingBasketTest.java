@@ -63,9 +63,16 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void buyOneGetOneFreeTest () {
+    public void buyOneGetOneFreeTest() {
         shoppingBasket.buyOneGetOneFree(cheese);
         assertEquals(2, shoppingBasket.itemCount());
 
+    }
+
+    @Test
+    public void totalBuyOneGetOneFreeTest() {
+        shoppingBasket.buyOneGetOneFree(cheese);
+        assertEquals(2, shoppingBasket.itemCount());
+        assertEquals(4.51, shoppingBasket.dealTotal());
     }
 }

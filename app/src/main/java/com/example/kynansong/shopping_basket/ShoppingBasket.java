@@ -44,4 +44,10 @@ public class ShoppingBasket {
         basket.add(item);
         basket.add(item);
     }
+
+    public double dealTotal() {  //assumes that every item is buy one get one free, thus the total is always half.
+        double result = totalShoppingAmount();
+        return result / 2;
+
+    }
 }
