@@ -12,12 +12,13 @@ import static junit.framework.Assert.assertEquals;
 public class ShoppingBasketTest {
 
     ShoppingBasket shoppingBasket;
-    ShopItem cheese;
+    ShopItem cheese, rum;
 
     @Before
     public void before() {
         this.shoppingBasket = new ShoppingBasket();
         this.cheese = new ShopItem("Cheese", 4.51);
+        this.rum = new ShopItem("Rum", 24.67);
 
     }
 
@@ -29,6 +30,15 @@ public class ShoppingBasketTest {
     @Test
     public void BasketHasOneItemTest() {
         shoppingBasket.addItem(cheese);
+        assertEquals(1, shoppingBasket.itemCount());
+    }
+
+    @Test
+    public void RemoveItemFromBasket() {
+        shoppingBasket.addItem(cheese);
+        shoppingBasket.addItem(rum);
+        assertEquals(2, shoppingBasket.itemCount());
+        shoppingBasket.removeItem(rum);
         assertEquals(1, shoppingBasket.itemCount());
     }
 }
